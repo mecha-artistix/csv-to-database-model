@@ -61,3 +61,20 @@ class Stats(models.Model):
 		return
 
 
+class Thresholds(models.Model):
+	#Tenant[0] = models.CharField(max_length=250)
+	Id[1] = models.CharField(max_length=250)
+	FilterIDs[2] = models.CharField(max_length=250)
+	ActivationInterval[3] = models.CharField(max_length=250)
+	MaxHits[4] = models.CharField(max_length=250)
+	MinHits[5] = models.CharField(max_length=250)
+	MinSleep[6] = models.CharField(max_length=250)
+	Blocker[7] = models.CharField(max_length=250)
+	Weight[8] = models.CharField(max_length=250)
+	ActionIDs[9] = models.CharField(max_length=250)
+	Async[10] = models.CharField(max_length=250)
+
+	def __str__(self):
+		return
+
+
