@@ -1,0 +1,51 @@
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+nav ul {
+  display: flex;
+}
+ul > li {
+  margin: 0px 20px;
+  list-style: none;
+}
+
+/* Style for the entire table */
+table {
+  width: 100%; /* Make the table take up the full width of its container */
+  border-collapse: collapse; /* Collapse borders to avoid double borders */
+  margin-top: 20px; /* Add some space above the table */
+  /* Light background for the table */
+}
+
+/* Style for table headers */
+th {
+  /* Light grey background for headers */
+  color: #333; /* Dark grey text for visibility */
+  padding: 8px; /* Padding inside header cells */
+  border: 1px solid #333; /* Light grey border for cells */
+  text-align: left; /* Align text to the left */
+  font-weight: bold; /* Make header text bold */
+  background-color: #ddd;
+}
+
+/* Style for table data cells */
+td {
+  padding: 8px; /* Padding inside data cells */
+  border: 1px solid #ddd; /* Light grey border for cells */
+  text-align: left; /* Align text to the left */
+}

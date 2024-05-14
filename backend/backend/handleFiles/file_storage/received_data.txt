@@ -1,0 +1,63 @@
+class Rates(models.Model):
+	#Id = models.CharField(max_length=250)
+	ConnectFee = models.CharField(max_length=250)
+	Rate = models.CharField(max_length=250)
+	RateUnit = models.CharField(max_length=250)
+	RateIncrement = models.CharField(max_length=250)
+	GroupIntervalStart = models.CharField(max_length=250)
+
+	def __str__(self):
+		return
+
+
+class RatingPlans(models.Model):
+	#Id = models.CharField(max_length=250)
+	DestinationRatesId = models.CharField(max_length=250)
+	TimingTag = models.CharField(max_length=250)
+	Weight = models.CharField(max_length=250)
+
+	def __str__(self):
+		return
+
+
+class Routes(models.Model):
+	#Tenant = models.CharField(max_length=250)
+	ID = models.CharField(max_length=250)
+	FilterIDs = models.CharField(max_length=250)
+	ActivationInterval = models.CharField(max_length=250)
+	Sorting = models.CharField(max_length=250)
+	SortingParameters = models.CharField(max_length=250)
+	RouteID = models.CharField(max_length=250)
+	RouteFilterIDs = models.CharField(max_length=250)
+	RouteAccountIDs = models.CharField(max_length=250)
+	RouteRatingPlanIDs = models.CharField(max_length=250)
+	RouteResourceIDs = models.CharField(max_length=250)
+	RouteStatIDs = models.CharField(max_length=250)
+	RouteWeight = models.CharField(max_length=250)
+	RouteBlocker = models.CharField(max_length=250)
+	RouteParameters = models.CharField(max_length=250)
+	Weight = models.CharField(max_length=250)
+
+	def __str__(self):
+		return
+
+
+class Stats(models.Model):
+	#Tenant[0] = models.CharField(max_length=250)
+	Id[1] = models.CharField(max_length=250)
+	FilterIDs[2] = models.CharField(max_length=250)
+	ActivationInterval[3] = models.CharField(max_length=250)
+	QueueLength[4] = models.CharField(max_length=250)
+	TTL[5] = models.CharField(max_length=250)
+	MinItems[6] = models.CharField(max_length=250)
+	Metrics[7] = models.CharField(max_length=250)
+	MetricFilterIDs[8] = models.CharField(max_length=250)
+	Stored[9] = models.CharField(max_length=250)
+	Blocker[10] = models.CharField(max_length=250)
+	Weight[11] = models.CharField(max_length=250)
+	ThresholdIDs[12] = models.CharField(max_length=250)
+
+	def __str__(self):
+		return
+
+
