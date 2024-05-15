@@ -33,7 +33,6 @@ file_url = os.path.join(file_storage_path, 'urls.py')
 with open(file_model, 'w') as model, open(file_serializer, 'w') as serializer, open(file_view, 'w') as view, open(file_url, 'w') as view:
     model.write('from django.db import models'+'\n')
     serializer.write('from rest_framework import serializers'+'\n')
-    view.write('from')
 
 dump = os.path.join(file_storage_path, 'dump.txt')
 
@@ -49,7 +48,7 @@ def receive_data(request):
         file_name = data['fileName']
         file_content = data['fileContent']
         # Check if content already exists in the table
-        if Rawdata.objects.filter(file_content=file_content).exists():
+        if Rawdata.objects.all().filter(file_name=file_name).exists():
             return JsonResponse({"status": "error", "message": "File content already exists."}, status=400)
         
         # Create a new RawData object and save it
