@@ -1,5 +1,5 @@
 from django.db import models
-
+from .file_storage.models import *
 # Create your models here.
 
 class Rawdata(models.Model):

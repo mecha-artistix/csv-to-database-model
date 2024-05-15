@@ -1,7 +1,7 @@
 class Rates(models.Model):
 	#Id = models.CharField(max_length=250)
-	ConnectFee = models.CharField(max_length=250)
-	Rate = models.CharField(max_length=250)
+	ConnectFee = models.FloatField()
+	Rate = models.FloatField()
 	RateUnit = models.CharField(max_length=250)
 	RateIncrement = models.CharField(max_length=250)
 	GroupIntervalStart = models.CharField(max_length=250)
@@ -14,7 +14,7 @@ class RatingPlans(models.Model):
 	#Id = models.CharField(max_length=250)
 	DestinationRatesId = models.CharField(max_length=250)
 	TimingTag = models.CharField(max_length=250)
-	Weight = models.CharField(max_length=250)
+	Weight = models.IntegerField()
 
 	def __str__(self):
 		return
@@ -24,7 +24,7 @@ class Routes(models.Model):
 	#Tenant = models.CharField(max_length=250)
 	ID = models.CharField(max_length=250)
 	FilterIDs = models.CharField(max_length=250)
-	ActivationInterval = models.CharField(max_length=250)
+	ActivationInterval = models.DateField()
 	Sorting = models.CharField(max_length=250)
 	SortingParameters = models.CharField(max_length=250)
 	RouteID = models.CharField(max_length=250)
@@ -36,7 +36,7 @@ class Routes(models.Model):
 	RouteWeight = models.CharField(max_length=250)
 	RouteBlocker = models.CharField(max_length=250)
 	RouteParameters = models.CharField(max_length=250)
-	Weight = models.CharField(max_length=250)
+	Weight = models.IntegerField()
 
 	def __str__(self):
 		return
@@ -46,15 +46,15 @@ class Stats(models.Model):
 	#Tenant[0] = models.CharField(max_length=250)
 	Id[1] = models.CharField(max_length=250)
 	FilterIDs[2] = models.CharField(max_length=250)
-	ActivationInterval[3] = models.CharField(max_length=250)
-	QueueLength[4] = models.CharField(max_length=250)
+	ActivationInterval[3] = models.DateField()
+	QueueLength[4] = models.IntegerField()
 	TTL[5] = models.CharField(max_length=250)
-	MinItems[6] = models.CharField(max_length=250)
+	MinItems[6] = models.IntegerField()
 	Metrics[7] = models.CharField(max_length=250)
 	MetricFilterIDs[8] = models.CharField(max_length=250)
-	Stored[9] = models.CharField(max_length=250)
-	Blocker[10] = models.CharField(max_length=250)
-	Weight[11] = models.CharField(max_length=250)
+	Stored[9] = models.BooleanField()
+	Blocker[10] = models.BooleanField()
+	Weight[11] = models.IntegerField()
 	ThresholdIDs[12] = models.CharField(max_length=250)
 
 	def __str__(self):
@@ -65,14 +65,37 @@ class Thresholds(models.Model):
 	#Tenant[0] = models.CharField(max_length=250)
 	Id[1] = models.CharField(max_length=250)
 	FilterIDs[2] = models.CharField(max_length=250)
-	ActivationInterval[3] = models.CharField(max_length=250)
-	MaxHits[4] = models.CharField(max_length=250)
-	MinHits[5] = models.CharField(max_length=250)
-	MinSleep[6] = models.CharField(max_length=250)
-	Blocker[7] = models.CharField(max_length=250)
-	Weight[8] = models.CharField(max_length=250)
+	ActivationInterval[3] = models.DateField()
+	MaxHits[4] = models.IntegerField()
+	MinHits[5] = models.IntegerField()
+	MinSleep[6] = models.IntegerField()
+	Blocker[7] = models.BooleanField()
+	Weight[8] = models.IntegerField()
 	ActionIDs[9] = models.CharField(max_length=250)
-	Async[10] = models.CharField(max_length=250)
+	Async[10] = models.BooleanField()
+
+	def __str__(self):
+		return
+
+
+class Actions(models.Model):
+	#ActionsId[0] = models.CharField(max_length=250)
+	Action[1] = models.CharField(max_length=250)
+	ExtraParameters[2] = models.CharField(max_length=250)
+	Filter[3] = models.CharField(max_length=250)
+	BalanceId[4] = models.CharField(max_length=250)
+	BalanceType[5] = models.CharField(max_length=250)
+	Categories[6] = models.CharField(max_length=250)
+	DestinationIds[7] = models.CharField(max_length=250)
+	RatingSubject[8] = models.CharField(max_length=250)
+	SharedGroup[9] = models.CharField(max_length=250)
+	ExpiryTime[10] = models.CharField(max_length=250)
+	TimingIds[11] = models.CharField(max_length=250)
+	Units[12] = models.IntegerField()
+	BalanceWeight[13] = models.IntegerField()
+	BalanceBlocker[14] = models.BooleanField()
+	BalanceDisabled[15] = models.BooleanField()
+	Weight[16] = models.IntegerField()
 
 	def __str__(self):
 		return

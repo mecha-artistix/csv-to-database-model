@@ -53,10 +53,7 @@ function App() {
             path="set-rate"
             element={<SetRates rates={rates} keys={keys} BASE_API={BASE_API} />}
           />
-          <Route
-            path="file-upload"
-            element={<FileUpload BASE_API={BASE_API} />}
-          />
+          <Route path="file-upload" element={<FileUpload />} />
         </Routes>
       </div>
     </BrowserRouter>

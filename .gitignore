@@ -1,0 +1,2 @@
+# Ignore everything in the file_storage directory
+/backend/backend/handleFiles/file_storage/
